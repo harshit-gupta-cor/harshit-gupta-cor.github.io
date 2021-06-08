@@ -40,6 +40,21 @@ examples and to data from the SMLM 2016 Challenge.},
 
 
 % Accepted journal papers
+
+@ARTICLE(bohra2020,
+AUTHOR="Bohra, P. and Campos, J. and Gupta, H. and Aziznejad, S. and
+        Unser, M.",
+TITLE="Learning Activation Functions in Deep (Spline) Neural Networks",
+JOURNAL="{IEEE} Open Journal of Signal Processing",
+YEAR="2020",
+volume="1",
+number="",
+pages="295--309",
+month="November 19,",
+Url={http://bigwww.epfl.ch/publications/bohra2003.html},
+Abstract="We develop an efficient computational solution to train deep neural networks (DNN) with free-form activation functions. To make the problem well-posed, we augment the cost functional of the DNN by adding an appropriate shape regularization: the sum of the second-order total-variations of the trainable nonlinearities. The representer theorem for DNNs tells us that the optimal activation functions are adaptive piecewise-linear splines, which allows us to recast the problem as a parametric optimization. The challenging point is that the corresponding basis functions (ReLUs) are poorly conditioned and that the determination of their number and positioning is also part of the problem. We circumvent the difficulty by using an equivalent B-spline basis to encode the activation functions and by expressing the regularization as an ℓ1-penalty. This results in the specification of parametric activation function modules that can be implemented and optimized efficiently on standard development platforms. We present experimental results that demonstrate the benefit of our approach. ")
+
+
 @article{gupta2018cnn,
   Title={CNN-based projected gradient descent for consistent CT image reconstruction},
   Author={Gupta, Harshit and Jin, Kyong Hwan and Nguyen, Ha Q and McCann, Michael T and Unser, Michael},
@@ -49,25 +64,21 @@ examples and to data from the SMLM 2016 Challenge.},
   Pages={1440--1453},
   Year={2018},
   Publisher={IEEE},
-  Url = {http://bigwww.epfl.ch/preprints/delaguilapla2002p.html},
-  Abstract = {In this paper, we analyze the two-node joint clock synchronization and ranging problem. We focus on the case of nodes that employ time-to-digital converters to determine the range between them precisely. This specific design choice leads to a sawtooth model for the captured signal, which has not been studied before from an estimation theoretic standpoint. In the study of this model, we recover the basic conclusion of a well-known article by Freris, Graham, and Kumar in clock synchronization. More importantly, we discover a surprising identifiability result on the sawtooth signal model: noise improves the theoretical condition of the estimation of the phase and offset parameters. To complete our study, we provide performance references for joint clock synchronization and ranging using the sawtooth signal model by presenting an exhaustive simulation study on basic estimation strategies under different realistic conditions. With our contributions in this paper, we enable further research in the estimation of sawtooth signal models and pave the path towards their industrial use for clock synchronization and ranging.},
+  Url = {http://bigwww.epfl.ch/publications/gupta1802.pdf},
+  Abstract = {We present a new image reconstruction method that replaces the projector in a projected gradient descent (PGD) with a convolutional neural network (CNN). Recently, CNNs trained as image-to-image regressors have been successfully used to solve inverse problems in imaging. However, unlike existing iterative image reconstruction algorithms, these CNN-based approaches usually lack a feedback mechanism to enforce that the reconstructed image is consistent with the measurements. We propose a relaxed version of PGD wherein gradient descent enforces measurement consistency, while a CNN recursively projects the solution closer to the space of desired reconstruction images. We show that this algorithm is guaranteed to converge and, under certain conditions, converges to a local minimum of a non-convex inverse problem. Finally, we propose a simple scheme to train the CNN to act like a projector. Our experiments on sparse-view computed tomography reconstruction show an improvement over total variation-based regularization, dictionary learning, and a state-of-the-art deep learning-based direct reconstruction technique. },
 }
 
-@article{sfasdf,
-    Title = {CryoGAN},
-    Journal = {IEEE Open Journal of Signal Processing},
-    Author = {Pol del Aguila Pla and Lissy Pellaco and Satyam Dwivedi and Peter H\"{a}ndel and Joakim Jald\'{e}n},
-    Year = {2020},
-    Month = {},
-    Eprint = {1906.08208},
-    Eprintclass = {eess.SY},
-    Github = {poldap/clock_sync_and_range},
-    Doi = {10.1109/OJSP.2020.2978762},
-    Url = {http://bigwww.epfl.ch/preprints/delaguilapla2002p.html},
-    Pages = {},
-    Volume = {},
-    Number = {},
-    Abstract = {In this paper, we analyze the two-node joint clock synchronization and ranging problem. We focus on the case of nodes that employ time-to-digital converters to determine the range between them precisely. This specific design choice leads to a sawtooth model for the captured signal, which has not been studied before from an estimation theoretic standpoint. In the study of this model, we recover the basic conclusion of a well-known article by Freris, Graham, and Kumar in clock synchronization. More importantly, we discover a surprising identifiability result on the sawtooth signal model: noise improves the theoretical condition of the estimation of the phase and offset parameters. To complete our study, we provide performance references for joint clock synchronization and ranging using the sawtooth signal model by presenting an exhaustive simulation study on basic estimation strategies under different realistic conditions. With our contributions in this paper, we enable further research in the estimation of sawtooth signal models and pave the path towards their industrial use for clock synchronization and ranging.},
+@article{gupta2018continuous,
+  title={Continuous-domain solutions of linear inverse problems with Tikhonov versus generalized TV regularization},
+  author={Gupta, Harshit and Fageot, Julien and Unser, Michael},
+  journal={IEEE Transactions on Signal Processing},
+  volume={66},
+  number={17},
+  pages={4670--4684},
+  year={2018},
+  publisher={IEEE},
+  Url={https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8421607},
+    Abstract = {We consider one-dimensional (1-D) linear inverse problems that are formulated in the continuous domain. The object of recovery is a function that is assumed to minimize a convex objective functional. The solutions are constrained by imposing a continuous-domain regularization. We derive the parametric form of the solution (representer theorems) for Tikhonov (quadratic) and generalized total-variation (gTV) regularizations. We show that, in both cases, the solutions are splines that are intimately related to the regularization operator. In the Tikhonov case, the solution is smooth and constrained to live in a fixed subspace that depends on the measurement operator. By contrast, the gTV regularization results in a sparse solution composed of only a few dictionary elements that are upper-bounded by the number of measurements and independent of the measurement operator. Our findings for the gTV regularization resonates with the minimization of the ℓ1 norm, which is its discrete counterpart and also produces sparse solutions. Finally, we find the experimental solutions for some measurement models in one dimension. We discuss the special case when the gTV regularization results in multiple solutions and devise an algorithm to find an extreme point of the solution set which is guaranteed to be sparse.},
 }
 
 
