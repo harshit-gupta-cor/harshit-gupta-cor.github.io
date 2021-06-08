@@ -15,32 +15,55 @@
 %    Number = {},
 %    Abstract = {},
 %}
-@unpublished{Denoyelle2021,
-    Title = {CryoGAN},
-    Journal = {Accepted in the 2021 IEEE 18th International Symposium on Biomedical Imaging (ISBI 2021)},
-    Author = {Quentin Denoyelle and Thanh-an Pham and Pol del Aguila Pla and Daniel Sage and Michael Unser},
-    Year = {2021},
-    Month = {},
-    Eprint = {2010.13423},
-    Eprintclass = {eess.IV},
-    Doi = {},
-    Url = {},
-    Pages = {},
-    Volume = {},
-    Number = {},
-    Abstract = {We propose the use of Flat Metric to assess the performance of reconstruction
-methods for single-molecule localization microscopy (SMLM) in scenarios where
-the ground-truth is available. Flat Metric is intimately related to the concept
-of optimal transport between measures of different mass, providing solid
-mathematical foundations for SMLM evaluation and integrating both localization
-and detection performance. In this paper, we provide the foundations of Flat
-Metric and validate this measure by applying it to controlled synthetic
-examples and to data from the SMLM 2016 Challenge.},
+@unpublished{gupta2020cryogan,
+  Title={CryoGAN: a new reconstruction paradigm for single-particle Cryo-EM via deep adversarial learning},
+  Author={Gupta, Harshit and McCann, Michael T and Donati, Laurene and Unser, Michael},
+  Journal={BioRxiv},
+  Year={2020},
+  Publisher={Cold Spring Harbor Laboratory},
+  Url={https://www.biorxiv.org/content/10.1101/2020.03.20.001016v2/},
+  Abstract={We present CryoGAN, a new paradigm for single-particle cryo-EM reconstruction based on unsupervised deep adversarial learning. The major challenge in single-particle cryo-EM is that the imaged particles have unknown poses. Current reconstruction techniques are based on a marginalized maximum-likelihood formulation that requires calculations over the set of all possible poses for each projection image, a computationally demanding procedure. CryoGAN sidesteps this problem by using a generative adversarial network (GAN) to learn the 3D structure that has simulated projections that most closely match the real data in a distributional sense. The architecture of CryoGAN resembles that of standard GAN, with the twist that the generator network is replaced by a model of the cryo-EM image acquisition process. CryoGAN is an unsupervised algorithm that only demands projection images and an estimate of the contrast transfer function parameters. No initial volume estimate or prior training is needed. Moreover, CryoGAN requires minimal user interaction and can provide reconstructions in a matter of hours on a high-end GPU. In addition, we provide sound mathematical guarantees on the recovery of the correct structure. CryoGAN currently achieves a 8.6 Å resolution on a realistic synthetic dataset. Preliminary results on real β-galactosidase data demonstrate CryoGAN’s ability to exploit data statistics under standard experimental imaging conditions. We believe that this paradigm opens the door to a family of novel likelihood-free algorithms for cryo-EM reconstruction.}
 }
+
+%
+%@unpublished{Denoyelle2021,
+%    Title = {CryoGAN},
+%    Journal = {Accepted in the 2021 IEEE 18th International Symposium on Biomedical Imaging (ISBI 2021)},
+%    Author = {Quentin Denoyelle and Thanh-an Pham and Pol del Aguila Pla and Daniel Sage and Michael Unser},
+%    Year = {2021},
+%    Month = {},
+%    Eprint = {2010.13423},
+%    Eprintclass = {eess.IV},
+%    Doi = {},
+%    Url = {},
+%    Pages = {},
+%    Volume = {},
+%    Number = {},
+%    Abstract = {We propose the use of Flat Metric to assess the performance of reconstruction
+%methods for single-molecule localization microscopy (SMLM) in scenarios where
+%the ground-truth is available. Flat Metric is intimately related to the concept
+%of optimal transport between measures of different mass, providing solid
+%mathematical foundations for SMLM evaluation and integrating both localization
+%and detection performance. In this paper, we provide the foundations of Flat
+%Metric and validate this measure by applying it to controlled synthetic
+%examples and to data from the SMLM 2016 Challenge.},
+%}
 
 
 % Accepted journal papers
 %
+
+@article{yoo2021time,
+  Title={Time-Dependent Deep Image Prior for Dynamic MRI},
+  Author={Yoo, Jaejun and Jin, Kyong Hwan and Gupta, Harshit and Yerly, Jerome and Stuber, Matthias and Unser, Michael},
+  Journal={IEEE Transactions on Medical Imaging},
+  Year={2021},
+  Publisher={IEEE},
+  Url={https://arxiv.org/pdf/1910.01684v2.pdf},
+  Abstract={We propose a novel unsupervised deep-learning-based algorithm for dynamic magnetic resonance imaging (MRI) reconstruction. Dynamic MRI requires rapid data acquisition for the study of moving organs such as the heart. We introduce a generalized version of the deep-image-prior approach, which optimizes the weights of a reconstruction network to fit a sequence of sparsely acquired dynamic MRI measurements. Our method needs neither prior training nor additional data. In particular, for cardiac images, it does not require the marking of heartbeats or the reordering of spokes. The key ingredients of our method are threefold: 1) a fixed low-dimensional manifold that encodes the temporal variations of images; 2) a network that maps the manifold into a more expressive latent space; and 3) a convolutional neural network that generates a dynamic series of MRI images from the latent variables and that favors their consistency with the measurements in k-space. Our method outperforms the state-of-the-art methods quantitatively and qualitatively in both retrospective and real fetal cardiac datasets. To the best of our knowledge, this is the first unsupervised deep-learning-based method that can reconstruct the continuous variation of dynamic MRI sequences with high spatial resolution.}
+}
+
+
 
 @article{bohra2020learning,
   Title={Learning Activation Functions in Deep (Spline) Neural Networks},
@@ -63,7 +86,7 @@ Abstract={We develop an efficient computational solution to train deep neural ne
   Pages={1440--1453},
   Year={2018},
   Publisher={IEEE},
-  Url = {http://bigwww.epfl.ch/publications/gupta1802.pdf},
+  Url = {http://bigwww.epfl.ch/publications/gupta1802.html},
   Abstract = {We present a new image reconstruction method that replaces the projector in a projected gradient descent (PGD) with a convolutional neural network (CNN). Recently, CNNs trained as image-to-image regressors have been successfully used to solve inverse problems in imaging. However, unlike existing iterative image reconstruction algorithms, these CNN-based approaches usually lack a feedback mechanism to enforce that the reconstructed image is consistent with the measurements. We propose a relaxed version of PGD wherein gradient descent enforces measurement consistency, while a CNN recursively projects the solution closer to the space of desired reconstruction images. We show that this algorithm is guaranteed to converge and, under certain conditions, converges to a local minimum of a non-convex inverse problem. Finally, we propose a simple scheme to train the CNN to act like a projector. Our experiments on sparse-view computed tomography reconstruction show an improvement over total variation-based regularization, dictionary learning, and a state-of-the-art deep learning-based direct reconstruction technique. },
 }
 
@@ -80,155 +103,176 @@ Abstract={We develop an efficient computational solution to train deep neural ne
     Abstract = {We consider one-dimensional (1-D) linear inverse problems that are formulated in the continuous domain. The object of recovery is a function that is assumed to minimize a convex objective functional. The solutions are constrained by imposing a continuous-domain regularization. We derive the parametric form of the solution (representer theorems) for Tikhonov (quadratic) and generalized total-variation (gTV) regularizations. We show that, in both cases, the solutions are splines that are intimately related to the regularization operator. In the Tikhonov case, the solution is smooth and constrained to live in a fixed subspace that depends on the measurement operator. By contrast, the gTV regularization results in a sparse solution composed of only a few dictionary elements that are upper-bounded by the number of measurements and independent of the measurement operator. Our findings for the gTV regularization resonates with the minimization of the ℓ1 norm, which is its discrete counterpart and also produces sparse solutions. Finally, we find the experimental solutions for some measurement models in one dimension. We discuss the special case when the gTV regularization results in multiple solutions and devise an algorithm to find an extreme point of the solution set which is guaranteed to be sparse.},
 }
 
-
-@article{AguilaPla2019a,
-    Title = {{C}lock synchronization over networks — {I}dentifiability of the sawtooth model},
-    Journal = {IEEE Open Journal of Signal Processing},
-    Author = {Pol del Aguila Pla and Lissy Pellaco and Satyam Dwivedi and Peter H\"{a}ndel and Joakim Jald\'{e}n},
-    Year = {2020},
-    Month = {},
-    Eprint = {1906.08208},
-    Eprintclass = {eess.SY},
-    Github = {poldap/clock_sync_and_range},
-    Doi = {10.1109/OJSP.2020.2978762},
-    Url = {http://bigwww.epfl.ch/preprints/delaguilapla2002p.html},
-    Pages = {},
-    Volume = {},
-    Number = {},
-    Abstract = {In this paper, we analyze the two-node joint clock synchronization and ranging problem. We focus on the case of nodes that employ time-to-digital converters to determine the range between them precisely. This specific design choice leads to a sawtooth model for the captured signal, which has not been studied before from an estimation theoretic standpoint. In the study of this model, we recover the basic conclusion of a well-known article by Freris, Graham, and Kumar in clock synchronization. More importantly, we discover a surprising identifiability result on the sawtooth signal model: noise improves the theoretical condition of the estimation of the phase and offset parameters. To complete our study, we provide performance references for joint clock synchronization and ranging using the sawtooth signal model by presenting an exhaustive simulation study on basic estimation strategies under different realistic conditions. With our contributions in this paper, we enable further research in the estimation of sawtooth signal models and pave the path towards their industrial use for clock synchronization and ranging.},
+@article{debarre2019b,
+  Title={B-spline-based exact discretization of continuous-domain inverse problems with generalized TV regularization},
+  Author={Debarre, Thomas and Fageot, Julien and Gupta, Harshit and Unser, Michael},
+  Journal={IEEE Transactions on Information Theory},
+  Volume={65},
+  Number={7},
+  Pages={4457--4470},
+  Year={2019},
+  Publisher={IEEE},
+  Url={http://bigwww.epfl.ch/publications/debarre1903.html},
+  Abstract="We study continuous-domain linear inverse problems with generalized total-variation (gTV) regularization, expressed in terms of a regularization operator L. It has recently been proved that such inverse problems have sparse spline solutions, with fewer jumps than the number of measurements. Moreover, the type of spline solely depends on L (L-splines) and is independent of the measurements. The continuous-domain inverse problem can be recast in an exact way as a finite-dimensional problem by restricting the search space to splines with knots on a uniform finite grid. However, expressing the L-spline coefficients in the dictionary basis of the Green's function of L is ill-suited for practical problems due to its infinite support. Instead, we propose to formulate the problem in the B-spline dictionary basis, which leads to better-conditioned problems. As we make the grid finer, we show that a solution of the continuous-domain problem can be approached arbitrarily closely with functions of this search space. This result motivates our proposed multiresolution algorithm, which computes sparse solutions of our inverse problem. We demonstrate that this algorithm is computationally feasible for 1D signals when L is an ordinary differential operator.",
 }
 
-@article{AguilaPla2017,
-  Title                    = {Cell detection by functional inverse diffusion and non-negative group sparsity—{P}art {I}: {M}odeling and {I}nverse Problems},
-  Journal = {IEEE Transactions on Signal Processing},
-  Author                   = {Pol del Aguila Pla and Joakim Jald\'{e}n},
-  Year                     = {2018},
-  Eprint = {1710.01604},
-  Eprintclass = {eess.SP},
-  Doi = {10.1109/TSP.2018.2868258},
-  Url                     = {http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-233824},
-  Pages = {5407–5421},
-  Volume = {66},
-  Number = {20},
-  Abstract = {In this two-part paper, we present a novel framework and methodology to analyze data from certain image-based biochemical assays, e.g., ELISPOT and Fluorospot assays. In this first part, we start by presenting a physical partial differential equations (PDE) model up to image acquisition for these biochemical assays. Then, we use the PDEs' Green function to derive a novel parametrization of the acquired images. This parametrization allows us to propose a functional optimization problem to address inverse diffusion. In particular, we propose a non-negative group-sparsity regularized optimization problem with the goal of localizing and characterizing the biological cells involved in the said assays. We continue by proposing a suitable discretization scheme that enables both the generation of synthetic data and implementable algorithms to address inverse diffusion. We end Part I by providing a preliminary comparison between the results of our methodology and an expert human labeler on real data. Part II is devoted to providing an accelerated proximal gradient algorithm to solve the proposed problem and to the empirical validation of our methodology.},
+@article{aziznejad2020deep,
+  Title={Deep neural networks with trainable activations and controlled Lipschitz constant},
+  Author={Aziznejad, Shayan and Gupta, Harshit and Campos, Joaquim and Unser, Michael},
+  Journal={IEEE Transactions on Signal Processing},
+  Volume={68},
+  Pages={4688--4699},
+  Year={2020},
+  Publisher={IEEE},
+  Url={http://bigwww.epfl.ch/publications/aziznejad2001.html},
+  Abstract={We introduce a variational framework to learn the activation functions of deep neural networks. Our aim is to increase the capacity of the network while controlling an upper-bound of the actual Lipschitz constant of the input-output relation. To that end, we first establish a global bound for the Lipschitz constant of neural networks. Based on the obtained bound, we then formulate a variational problem for learning activation functions. Our variational problem is infinite-dimensional and is not computationally tractable. However, we prove that there always exists a solution that has continuous and piecewise-linear (linear-spline) activations. This reduces the original problem to a finite-dimensional minimization where an ℓ 1 penalty on the parameters of the activations favors the learning of sparse nonlinearities. We numerically compare our scheme with standard ReLU network and its variations, PReLU and LeakyReLU and we empirically demonstrate the practical aspects of our framework.},
 }
 
-@article{AguilaPla2017a,
-  Title                    = {Cell detection by functional inverse diffusion and non-negative group sparsity—{P}art {II}: {P}roximal optimization and {P}erformance evaluation},
-  Journal = {IEEE Transactions on Signal Processing},
-  Author                   = {Pol del Aguila Pla and Joakim Jald\'{e}n},
-  Year                     = {2018},
-  Eprint = {1710.01622},
-  Eprintclass = {eess.SP},
-  Doi = {10.1109/TSP.2018.2868256},
-  Url                     = {http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-233827},
-  Pages = {5422–5437},
-  Volume = {66},
-  Number = {20},
-  Abstract = {In this two-part paper, we present a novel framework and methodology to analyze data from certain image-based biochemical assays, e.g., ELISPOT and Fluorospot assays. In this second part, we focus on our algorithmic contributions. We provide an algorithm for functional inverse diffusion that solves the variational problem we posed in Part I. As part of the derivation of this algorithm, we present the proximal operator for the non-negative group-sparsity regularizer, which is a novel result that is of interest in itself, also in comparison to previous results on the proximal operator of a sum of functions. We then present a discretized approximated implementation of our algorithm and evaluate it both in terms of operational cell-detection metrics and in terms of distributional optimal-transport metrics.},
+
+
+@article{yang2020deep,
+  Title={Deep-learning projector for optical diffraction tomography},
+  Author={Yang, Fangshu and Pham, Thanh-an and Gupta, Harshit and Unser, Michael and Ma, Jianwei},
+  Journal={Optics express},
+  Volume={28},
+  Number={3},
+  Pages={3905--3921},
+  Year={2020},
+  Publisher={Optical Society of America},
+  Url={http://bigwww.epfl.ch/publications/yang2001.html},
+  Abstract={Optical diffraction tomography is an effective tool to estimate the refractive indices of unknown objects. It proceeds by solving an ill-posed inverse problem for which the wave equation governs the scattering events. The solution has traditionally been derived by the minimization of an objective function in which the data-fidelity term encourages measurement consistency while the regularization term enforces prior constraints. In this work, we propose to train a convolutional neural network (CNN) as the projector in a projected-gradient-descent method. We iteratively produce high-quality estimates and ensure measurement consistency, thus keeping the best of CNN-based and regularization-based worlds. Our experiments on two-dimensional-simulated and real data show an improvement over other conventional or deep-learning-based methods. Furthermore, our trained CNN projector is general enough to accommodate various forward models for the handling of multiple-scattering events. }
 }
+
+@article{unser2016representer,
+  Title={Representer Theorems for Sparsity-Promoting $$\backslash$ell \_ $\{$1$\}$ $ Regularization},
+  Author={Unser, Michael and Fageot, Julien and Gupta, Harshit},
+  Journal={IEEE Transactions on Information Theory},
+  Volume={62},
+  Number={9},
+  Pages={5167--5180},
+  Year={2016},
+  Publisher={IEEE},
+  Url={http://bigwww.epfl.ch/publications/unser1602.html},
+  Abstract={We present a theoretical analysis and comparison of the effect of ℓ1 versus ℓ2 regularization for the resolution of ill-posed linear inverse and/or compressed sensing problems. Our formulation covers the most general setting where the solution is specified as the minimizer of a convex cost functional. We derive a series of representer theorems that give the generic form of the solution depending on the type of regularization. We start with the analysis of the problem in finite dimensions and then extend our results to the infinite-dimensional spaces ℓ2(ℤ) and ℓ1(ℤ). We also consider the use of linear transformations in the form of dictionaries or regularization operators. In particular, we show that the ℓ2 solution is forced to live in a predefined subspace that is intrinsically smooth and tied to the measurement operator. The ℓ1 solution, on the other hand, is formed by adaptively selecting a subset of atoms in a dictionary that is specified by the regularization operator. Beside the proof that ℓ1 solutions are intrinsically sparse, the main outcome of our investigation is that the use of ℓ1 regularization is much more favorable for injecting prior knowledge: it results in a functional form that is independent of the system matrix, while this is not so in the ℓ2 scenario. },
+}
+
+%
+%@article{AguilaPla2019a,
+%    Title = {{C}lock synchronization over networks — {I}dentifiability of the sawtooth model},
+%    Journal = {IEEE Open Journal of Signal Processing},
+%    Author = {Pol del Aguila Pla and Lissy Pellaco and Satyam Dwivedi and Peter H\"{a}ndel and Joakim Jald\'{e}n},
+%    Year = {2020},
+%    Month = {},
+%    Eprint = {1906.08208},
+%    Eprintclass = {eess.SY},
+%    Github = {poldap/clock_sync_and_range},
+%    Doi = {10.1109/OJSP.2020.2978762},
+%    Url = {http://bigwww.epfl.ch/preprints/delaguilapla2002p.html},
+%    Pages = {},
+%    Volume = {},
+%    Number = {},
+%    Abstract = {In this paper, we analyze the two-node joint clock synchronization and ranging problem. We focus on the case of nodes that employ time-to-digital converters to determine the range between them precisely. This specific design choice leads to a sawtooth model for the captured signal, which has not been studied before from an estimation theoretic standpoint. In the study of this model, we recover the basic conclusion of a well-known article by Freris, Graham, and Kumar in clock synchronization. More importantly, we discover a surprising identifiability result on the sawtooth signal model: noise improves the theoretical condition of the estimation of the phase and offset parameters. To complete our study, we provide performance references for joint clock synchronization and ranging using the sawtooth signal model by presenting an exhaustive simulation study on basic estimation strategies under different realistic conditions. With our contributions in this paper, we enable further research in the estimation of sawtooth signal models and pave the path towards their industrial use for clock synchronization and ranging.},
+%}
 
 % Accepted conference papers
-@inproceedings{AguilaPla2020b,
-    Title = {Clock synchronization over networks using sawtooth models},
-    Booktitle = {2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-    Author = {Pol del Aguila Pla and Lissy Pellaco and Satyam Dwivedi and Peter H\"{a}ndel and Joakim Jald\'{e}n},
-    Year = {2020},
-    Month = {May},
-    Eprint = {1910.09374},
-    Eprintclass = {eess.SP},
-    Github = {poldap/clock_sync_and_range},
-    Doi = {10.1109/ICASSP40776.2020.9054426},
-    Url = {http://bigwww.epfl.ch/preprints/delaguilapla2001p.html},
-    Pages = {5945–5949},
-    Abstract = {Clock synchronization and ranging over a wireless network with low communication overhead is a challenging goal with tremendous impact. In this paper, we study the use of time-to-digital converters in wireless sensors, which provides clock synchronization and ranging at negligible communication overhead through a sawtooth signal model for round trip times. In particular, we derive Cramér-Rao lower bounds for a linearitzation of the sawtooth signal model, and we thoroughly evaluate simple estimation techniques by simulation, giving clear and concise performance references for this technology.},
+
+@inproceedings{uhlmann2015statistical,
+  Title={Statistical optimality of Hermite splines},
+  Author={Uhlmann, Virginie and Fageot, Julien and Gupta, Harshit and Unser, Michael},
+  Booktitle={2015 International Conference on Sampling Theory and Applications (SampTA)},
+  Pages={226--230},
+  Year={2015},
+  Organization={IEEE},
+  Url={http://bigwww.epfl.ch/publications/uhlmann1502.html},
+  Abstract={Hermite splines are commonly used for interpolating data when samples of the derivative are available, in a scheme called Hermite interpolation. Assuming a suitable statistical model, we demonstrate that this method is actually optimal for reconstructing random signals in Papoulis' generalized sampling framework. We focus on second-order Lévy processes—the integrated version of Lévy processes—and rely on cubic Hermite splines to approximate the original continuous-time signal from its samples and its derivatives at integer values. We statistically justify the use of this reconstruction scheme by demonstrating the equivalence between cubic Hermite interpolation and the linear minimum mean-square error (LMMSE) estimation of a second-order Lévy process. We finally illustrate the cubic Hermite reconstruction scheme on an example of a discrete sequence sampled from the realization of a stochastic process. }
 }
 
-@inproceedings{AguilaPla2019,
-    Author = {Pol del Aguila Pla and Vidit Saxena and Joakim Jald\'{e}n},
-    Booktitle = {2019 IEEE 16th International Symposium on Biomedical Imaging (ISBI 2019)},
-    Title = {SpotNet – {L}earned iterations for cell detection in image-based immunoassays},
-    Year = {2019},
-    Month = {April},
-    Pages = {1023–1027},
-    Doi = {10.1109/ISBI.2019.8759568},
-    Eprint = {1810.06132},
-    Eprintclass = {eess.IV},
-    Github = {poldap/SpotNet},
-    Url = {https://arxiv.org/abs/1810.06132},
-    Abstract = {Accurate cell detection and counting in the image-based ELISpot and FluoroSpot immunoassays is a challenging task. Methodology recently proposed by our group matches human accuracy by leveraging knowledge of the underlying physical process of these assays and using state-of-the-art iterative techniques to solve an inverse problem. Nonetheless, thousands of computationally expensive iterations are often needed to reach a near-optimal solution. In this paper, we exploit the structure of the iterations to design a parameterized computation graph, \emph{SpotNet}, that learns the characteristic patterns embedded within several training images and their respective cell secretion information. Further, we compare SpotNet to a customized convolutional neural network layout for cell detection based on recent advances. We show empirical evidence that, while both designs obtain a detection performance far beyond that of a human expert, SpotNet is substantially easier to train and obtains better estimates of cell secretion.},
+@inproceedings{gupta2020multi,
+  Title={Multi-CryoGAN: Reconstruction of Continuous Conformations in Cryo-EM Using Generative Adversarial Networks},
+  Author={Gupta, Harshit and Phan, Thong H and Yoo, Jaejun and Unser, Michael},
+  Booktitle={European Conference on Computer Vision (ECCV) Workshops},
+  Pages={429--444},
+  Year={2020},
+  Organization={Springer},
+  Url={http://bigwww.epfl.ch/publications/gupta2001.html},
+  Abstract={We propose a deep-learning-based reconstruction method for cryo-electron microscopy (Cryo-EM) that can model multiple conformations of a nonrigid biomolecule in a standalone manner. Cryo-EM produces many noisy projections from separate instances of the same but randomly oriented biomolecule. Current methods rely on pose and conformation estimation which are inefficient for the reconstruction of continuous conformations that carry valuable information. We introduce Multi-CryoGAN, which sidesteps the additional processing by casting the volume reconstruction into the distribution matching problem. By introducing a manifold mapping module, Multi-CryoGAN can learn continuous structural heterogeneity without pose estimation nor clustering. We also give a theoretical guarantee of recovery of the true conformations. Our method can successfully reconstruct 3D protein complexes on synthetic 2D Cryo-EM datasets for both continuous and discrete structural variability scenarios. Multi-CryoGAN is the first model that can reconstruct continuous conformations of a biomolecule from Cryo-EM images in a fully unsupervised and end-to-end manner.}
 }
 
-@inproceedings{AguilaPla2018,
-	Author = {Pol del Aguila Pla and Joakim Jald\'{e}n},
-	Booktitle = {2018 IEEE 15th International Symposium on Biomedical Imaging (ISBI 2018)},
-	Title = {Cell detection on image-based immunoassays},
-	Year = {2018},
-	Month = {April},
-	Pages = {431–435},
-	Doi = {10.1109/ISBI.2018.8363609},
-	Eprint = {1810.09707},
-        Eprintclass = {eess.IV},
-	Url = {http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-223933},
-	Abstract = {Cell detection and counting in the image-based ELISPOT and Fluorospot immunoassays is considered a bottleneck. The task has remained hard to automatize, and biomedical researchers often have to rely on results that are not accurate. Previously proposed solutions are heuristic, and data-based
-	solutions are subject to a lack of objective ground truth data. In this paper, we analyze a partial differential equations model for ELISPOT, Fluorospot, and assays of similar design. This leads us to a mathematical observation model for the images generated by these assays. We use this model to motivate a methodology for cell detection. Finally, we provide a real-data example that suggests that this cell detection methodology and a human expert perform comparably.},
+@inproceedings{debarre2019solving,
+  Title={Solving continuous-domain problems exactly with multiresolution b-splines},
+  Author={Debarre, Thomas and Fageot, Julien and Gupta, Harshit and Unser, Michael},
+  Booktitle={ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  Pages={5122--5126},
+  Year={2019},
+  Organization={IEEE},
+  Url={http://bigwww.epfl.ch/publications/debarre1901.html},
+  Abstract={We propose a discretization method for continuous-domain linear inverse problems with multiple-order total-variation (TV) regularization. It is based on a recent result that proves that such inverse problems have sparse polynomial-spline solutions. Our method consists in restricting the search space to splines with knots on a uniform grid, which results in a standard convex finite-dimensional problem. As basis functions for this search space, we use the B-splines matched to the regularization order, which are optimally localized. This leads to a well-conditioned, computationally feasible optimization task. Our proposed iterative multiresolution algorithm then refines the grid size until a desired level of accuracy is met and converges to sparse solutions of our inverse problem. Finally, we present experimental results that validate our approach. }
 }
 
-@inproceedings{AguilaPla2018a,
-	Author = {Pol del Aguila Pla and Joakim Jald\'{e}n},
-	Booktitle = {2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-	Title = {Convolutional group-sparse coding and source localization},
-	Year = {2018},
-	Month = {April},
-	Pages = {2776–2780},
-	Eprint = {1810.08432},
-	Eprintclass = {eess.SP},
-	Doi = {10.1109/ICASSP.2018.8462235},
-	Url = {http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-224253},
-	Abstract = {In this paper, we present a new interpretation of non-negatively constrained convolutional coding problems as blind deconvolution problems with spatially variant point spread function. In this light, we propose an optimization framework that generalizes our previous work on non-negative group sparsity for convolutional models. We then link these concepts to source localization problems that arise in scientific imaging, and provide a visual example on an image derived from data captured by the Hubble telescope.},
+@inproceedings{gupta2017general,
+  Title={General surface energy for spinal cord and aorta segmentation},
+  Author={Gupta, Harshit and Schmitter, Daniel and Uhlmann, Virginie and Unser, Michael},
+  Booktitle={2017 IEEE 14th International Symposium on Biomedical Imaging (ISBI 2017)},
+  Pages={319--322},
+  Year={2017},
+  Organization={IEEE},
+  Url={http://bigwww.epfl.ch/publications/gupta1701.html},
+  Abstract={We present a new surface energy potential for the segmentation of cylindrical objects in 3D medical imaging using parametric spline active contours (a.k.a. spline-snakes). Our energy formulation is based on an optimal steerable surface detector. Thus, we combine the concept of steerability with spline-snakes that have open topology for semi-automatic segmentation. We show that the proposed energy yields segmentation results that are more robust to noise compared to classical gradient-based surface energies. We finally validate our model by segmenting the aorta on a cohort of 14 real 3D MRI images, and also provide an example of spinal cord segmentation using the same tool. }
 }
 
-@inproceedings{AguilaPla2014,
-	Author = {Pol del Aguila Pla and Felipe Calderero and Ferran Marqu\'{e}s and Javier Marcello and  Francisco Eugenio},
-	Booktitle = {2014 IEEE International Geoscience and Remote Sensing Symposium (IGARSS 2014)},
-	Title = {Fast generation of {LULC} maps for temporal studies in {N}orth-{W}estern {A}frica},
-	Year = {2014},
-	Pages = {4280–4283},
-	Url = {http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-157117},
-	Doi = {10.1109/igarss.2014.6947435},
-	Abstract = {This paper provides an objective evaluation of six supervised classification techniques and three state of the art features, with the objective of obtaining a single combination of them that provides both robustness and objective performance improvements. As a conclusion, a simple procedure for obtaining LULC maps with four targeted classes is proposed.},
-}
+%
+%@inproceedings{AguilaPla2019,
+%    Author = {Pol del Aguila Pla and Vidit Saxena and Joakim Jald\'{e}n},
+%    Booktitle = {2019 IEEE 16th International Symposium on Biomedical Imaging (ISBI 2019)},
+%    Title = {SpotNet – {L}earned iterations for cell detection in image-based immunoassays},
+%    Year = {2019},
+%    Month = {April},
+%    Pages = {1023–1027},
+%    Doi = {10.1109/ISBI.2019.8759568},
+%    Eprint = {1810.06132},
+%    Eprintclass = {eess.IV},
+%    Github = {poldap/SpotNet},
+%    Url = {https://arxiv.org/abs/1810.06132},
+%    Abstract = {Accurate cell detection and counting in the image-based ELISpot and FluoroSpot immunoassays is a challenging task. Methodology recently proposed by our group matches human accuracy by leveraging knowledge of the underlying physical process of these assays and using state-of-the-art iterative techniques to solve an inverse problem. Nonetheless, thousands of computationally expensive iterations are often needed to reach a near-optimal solution. In this paper, we exploit the structure of the iterations to design a parameterized computation graph, \emph{SpotNet}, that learns the characteristic patterns embedded within several training images and their respective cell secretion information. Further, we compare SpotNet to a customized convolutional neural network layout for cell detection based on recent advances. We show empirical evidence that, while both designs obtain a detection performance far beyond that of a human expert, SpotNet is substantially easier to train and obtains better estimates of cell secretion.},
+%}
 
 % Patents
 
-@patent{Mabtech2017,
-        Author = {Pol del Aguila Pla and Joakim Jald\'{e}n and Klas Magnusson and others},
-        Title = {Method and system for analysing Fluorospot assays},
-        Number = {},
-        Url = {https://patents.google.com/patent/WO2019004913A1},
-        Type = {Patent Application},
-        Nationality = {International},
-        Year = {2017},
-}
+%@patent{Mabtech2017,
+%        Author = {Pol del Aguila Pla and Joakim Jald\'{e}n and Klas Magnusson and others},
+%        Title = {Method and system for analysing Fluorospot assays},
+%        Number = {},
+%        Url = {https://patents.google.com/patent/WO2019004913A1},
+%        Type = {Patent Application},
+%        Nationality = {International},
+%        Year = {2017},
+%}
 
 
 
 % Theses
-@phdthesis{AguilaPlaPhDThesis,
-	Author = {Pol del Aguila Pla},
-	School = {KTH Royal Institute of Technology},
-	Title = {Inverse problems in signal processing: {F}unctional optimization, parameter estimation and machine learning},
-	Year = {2019},
-	Url = {http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-256079},
-	Abstract = {Inverse problems arise in any scientific endeavor. Indeed, it is seldom the case that our senses or basic instruments, i.e., the data, provide the answer we seek. It is only by using our understanding of how the world has generated the data, i.e., a model, that we can hope to infer what the data imply. Solving an inverse problem is, simply put, using a model to retrieve the information we seek from the data. In signal processing, systems are engineered to generate, process, or transmit signals, i.e., indexed data, in order to achieve some goal. The goal of a specific system could be to use an observed signal and its model to solve an inverse problem. However, the goal could also be to generate a signal so that it reveals a parameter to investigation by inverse problems. Inverse problems and signal processing overlap substantially, and rely on the same set of concepts and tools. This thesis lies at the intersection between them, and presents results in modeling, optimization, statistics, machine learning, biomedical imaging and automatic control. The novel scientific content of this thesis is contained in its seven composing publications, which are reproduced in Part II. In five of these, which are mostly motivated by a biomedical imaging application, a set of related optimization and machine learning approaches to source localization under diffusion and convolutional coding models are presented. These are included in Publications A, B, E, F and G, which also include contributions to the modeling and simulation of a specific family of image-based immunoassays. Publication C presents the analysis of a system for clock synchronization between two nodes connected by a channel, which is a problem of utmost relevance in automatic control. The system exploits a specific node design to generate a signal that enables the estimation of the synchronization parameters. In the analysis, substantial contributions to the identifiability of sawtooth signal models under different conditions are made. Finally, Publication D brings to light and proves results that have been largely overlooked by the signal processing community and characterize the information that quantized linear models contain about their location and scale parameters.},
+
+
+@phdthesis{gupta2020Thesis,
+  Title={From Classical to Unsupervised-Deep-Learning Methods for Solving Inverse Problems in Imaging.},
+  Author={ Harshit Gupta},
+  Year={2020},
+  School={EPFL},
+  Url={http://bigwww.epfl.ch/publications/gupta2002.html},
+  Abstract={ In this thesis, we propose new algorithms to solve inverse problems in the context of biomedical images. Due to ill-posedness, solving these problems require some prior knowledge of the statistics of the underlying images. The traditional algorithms, in the field, assume prior knowledge related to smoothness or sparsity of these images. Recently, they have been outperformed by the second generation algorithms which harness the power of neural networks to learn required statistics from training data. Even more recently, last generation deep-learning-based methods have emerged which require neither training nor training data.
+
+This thesis devises algorithms which progress through these generations. It extends these generations to novel formulations and applications while bringing more robustness. In parallel, it also progresses in terms of complexity, from proposing algorithms for problems with 1D data and an exact known forward model to the ones with 4D data and an unknown parametric forward model.
+
+We introduce five main contributions. The last three of them propose deep-learning-based latest-generation algorithms that require no prior training.
+
+1) We develop algorithms to solve the continuous-domain formulation of inverse problems with both classical Tikhonov and total-variation regularizations. We formalize the problems, characterize the solution set, and devise numerical approaches to find the solutions.
+
+2) We propose an algorithm that improves upon end-to-end neural-network-based second generation algorithms. In our method, a neural network is first trained as a projector on a training set, and is then plugged in as a projector inside the projected gradient descent (PGD). Since the problem is nonconvex, we relax the PGD to ensure convergence to a local minimum under some constraints. This method outperforms all the previous generation algorithms for Computed Tomography (CT).
+
+3) We develop a novel time-dependent deep-image-prior algorithm for modalities that involve a temporal sequence of images. We parameterize them as the output of an untrained neural network fed with a sequence of latent variables. To impose temporal directionality, the latent variables are assumed to lie on a 1D manifold. The network is then tuned to minimize the data fidelity. We obtain state-of-the-art results in dynamic magnetic resonance imaging (MRI) and even recover intra-frame images.
+
+4) We propose a novel reconstruction paradigm for cryo-electron-microscopy (CryoEM) called CryoGAN. Motivated by generative adversarial networks (GANs), we reconstruct a biomolecule's 3D structure such that its CryoEM measurements resemble the acquired data in a distributional sense. The algorithm is pose-or-likelihood-estimation-free, needs no ab initio, and is proven to have a theoretical guarantee of recovery of the true structure.
+
+5) We extend CryoGAN to reconstruct continuously varying conformations of a structure from heterogeneous data. We parameterize the conformations as the output of a neural network fed with latent variables on a low-dimensional manifold. The method is shown to recover continuous protein conformations and their energy landscape.
 }
-
-
-@mastersthesis{AguilaPlaMScThesis,
-	Author = {Pol del Aguila Pla},
-	School = {KTH Royal Institute of Technology},
-	Title = {Normalization of remote sensing imagery for automatic information extraction},
-	Year = {2014},
-	Url = {http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-144032},
-	Abstract = {For the time being, remote sensing automatized techniques are conventionally designed to be used exclusively on data captured by aparticular sensor system. This convention was only adopted after evidence suggested that, in the field, algorithms that yield great resultson data from one specific satellite or sensor, tend to underachieve on data from similar sensors. With this effect in mind, we will refer to remote sensing imagery as heterogeneous.There have been attempts to compensate every effect on the data and obtain the underlying physical property that carries the information, the ground reflectance. Because of their improvement of the informative value of each image, some of them have even been standardized as common preprocessing methods. However, these techniques generally require further knowledge on certain atmospheric properties at the time the data was captured. This information is generally not available and has to be estimated or guessed by experts, avery time consuming, inaccurate and expensive task. Moreover, even if the results do improve in each of the treated images, a significant decrease of their heterogeneity is not achieved. There have been more automatized proposals to treat the data in the literature, which have been broadly named relative radiometric normalization (RRN) algorithms. These consider the problem of heterogeneity itself and use properties strictly related to the statistics of remote sensing imagery to solve it. In this master thesis, an automatic algorithm to reduce heterogeneity in generic imagery is designed, characterized and evaluated through crossed classification results on remote sensing imagery.},
 }
