@@ -21,6 +21,7 @@
   Journal={BioRxiv},
   Year={2020},
   Publisher={Cold Spring Harbor Laboratory},
+  Github={harshit-gupta-cor/CryoGAN},
   Url={https://www.biorxiv.org/content/10.1101/2020.03.20.001016v2/},
   Abstract={We present CryoGAN, a new paradigm for single-particle cryo-EM reconstruction based on unsupervised deep adversarial learning. The major challenge in single-particle cryo-EM is that the imaged particles have unknown poses. Current reconstruction techniques are based on a marginalized maximum-likelihood formulation that requires calculations over the set of all possible poses for each projection image, a computationally demanding procedure. CryoGAN sidesteps this problem by using a generative adversarial network (GAN) to learn the 3D structure that has simulated projections that most closely match the real data in a distributional sense. The architecture of CryoGAN resembles that of standard GAN, with the twist that the generator network is replaced by a model of the cryo-EM image acquisition process. CryoGAN is an unsupervised algorithm that only demands projection images and an estimate of the contrast transfer function parameters. No initial volume estimate or prior training is needed. Moreover, CryoGAN requires minimal user interaction and can provide reconstructions in a matter of hours on a high-end GPU. In addition, we provide sound mathematical guarantees on the recovery of the correct structure. CryoGAN currently achieves a 8.6 Å resolution on a realistic synthetic dataset. Preliminary results on real β-galactosidase data demonstrate CryoGAN’s ability to exploit data statistics under standard experimental imaging conditions. We believe that this paradigm opens the door to a family of novel likelihood-free algorithms for cryo-EM reconstruction.}
 }
@@ -86,6 +87,7 @@ Abstract={We develop an efficient computational solution to train deep neural ne
   Pages={1440--1453},
   Year={2018},
   Publisher={IEEE},
+  Github={harshit-gupta-cor/CNN-RPGD},
   Url = {http://bigwww.epfl.ch/publications/gupta1802.html},
   Abstract = {We present a new image reconstruction method that replaces the projector in a projected gradient descent (PGD) with a convolutional neural network (CNN). Recently, CNNs trained as image-to-image regressors have been successfully used to solve inverse problems in imaging. However, unlike existing iterative image reconstruction algorithms, these CNN-based approaches usually lack a feedback mechanism to enforce that the reconstructed image is consistent with the measurements. We propose a relaxed version of PGD wherein gradient descent enforces measurement consistency, while a CNN recursively projects the solution closer to the space of desired reconstruction images. We show that this algorithm is guaranteed to converge and, under certain conditions, converges to a local minimum of a non-convex inverse problem. Finally, we propose a simple scheme to train the CNN to act like a projector. Our experiments on sparse-view computed tomography reconstruction show an improvement over total variation-based regularization, dictionary learning, and a state-of-the-art deep learning-based direct reconstruction technique. },
 }
@@ -195,6 +197,7 @@ Abstract={We develop an efficient computational solution to train deep neural ne
   Year={2020},
   Organization={Springer},
   Url={http://bigwww.epfl.ch/publications/gupta2001.html},
+  Github={harshit-gupta-cor/CryoGAN},
   Abstract={We propose a deep-learning-based reconstruction method for cryo-electron microscopy (Cryo-EM) that can model multiple conformations of a nonrigid biomolecule in a standalone manner. Cryo-EM produces many noisy projections from separate instances of the same but randomly oriented biomolecule. Current methods rely on pose and conformation estimation which are inefficient for the reconstruction of continuous conformations that carry valuable information. We introduce Multi-CryoGAN, which sidesteps the additional processing by casting the volume reconstruction into the distribution matching problem. By introducing a manifold mapping module, Multi-CryoGAN can learn continuous structural heterogeneity without pose estimation nor clustering. We also give a theoretical guarantee of recovery of the true conformations. Our method can successfully reconstruct 3D protein complexes on synthetic 2D Cryo-EM datasets for both continuous and discrete structural variability scenarios. Multi-CryoGAN is the first model that can reconstruct continuous conformations of a biomolecule from Cryo-EM images in a fully unsupervised and end-to-end manner.}
 }
 
